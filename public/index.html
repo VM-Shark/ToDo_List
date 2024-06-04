@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Todo List</h1>
+        <form id="taskForm" class="my-4">
+            <div class="form-group">
+                <label for="title">Task Title</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Task Title" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Task Description</label>
+                <input type="text" class="form-control" id="description" name="description" placeholder="Task Description">
+            </div>
+            <div class="form-group">
+                <label for="priority">Priority</label>
+                <select class="form-control" id="priority" name="priority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dueDate">Due Date</label>
+                <input type="date" class="form-control" id="dueDate" name="dueDate">
+            </div>
+            <div id="subtasks">
+                <h4>Subtasks</h4>
+                <div class="subtask">
+                    <input type="text" class="form-control mb-2" name="subTasks[0].title" placeholder="Subtask Title">
+                    <input type="text" class="form-control mb-2" name="subTasks[0].description" placeholder="Subtask Description">
+                </div>
+            </div>
+            <button type="button" id="addSubtaskBtn" class="btn btn-secondary mb-2">Add Subtask</button>
+            <button type="submit" class="btn btn-primary">Add Task</button>
+        </form>
+        <div id="tasks"></div>
+        <button id="logoutBtn" class="btn btn-warning mt-3">Logout</button>
+    </div>
+
+    <script src="js/tasks.js"></script>
+</body>
+</html>
